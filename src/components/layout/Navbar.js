@@ -1,8 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import SignedInLinks from './SignedInLinks'
+import SignedOutLinks from './SignedOutLinks'
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="nav-wrapper deep-purple darken-1"></nav>
+    <nav className="nav-wrapper deep-purple darken-1">
+      <div className="container">
+        <Link to="/" className="brand-logo">Saving Jars</Link>
+        <SignedInLinks />
+        <SignedOutLinks />
+      </div>
+    </nav>
   )
 }
 
