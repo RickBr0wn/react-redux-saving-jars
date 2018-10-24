@@ -8,15 +8,13 @@ import { Provider } from 'react-redux'
 import { rootReducer } from './reducers/rootReducer'
 import thunk from 'redux-thunk'
 
-const initalState  = {
-  jars: []
-}
+import { initialState } from './config/initialState'
 
 const reduxDevToolsExtension = window.devToolsExtension && window.devToolsExtension()
 
 const allStoreMiddleware = compose(applyMiddleware(thunk), reduxDevToolsExtension)
 
-const store = createStore(rootReducer, initalState, allStoreMiddleware)
+const store = createStore(rootReducer, initialState, allStoreMiddleware)
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
 // If you want your app to work offline and load faster, you can change
